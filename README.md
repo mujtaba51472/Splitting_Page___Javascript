@@ -1,0 +1,2 @@
+# Splitting_Page___Javascript
+splitingPage
