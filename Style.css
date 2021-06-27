@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --white: white;
+  --font-family: Roboto;
+  --btn-bg-color-on-hover: rgb(7, 7, 7);
+  --hover-width: 75%;
+  --hover-none: 25%;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: Roboto;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.leftPage {
+  height: 100%;
+  width: 50%;
+  background-color: tomato;
+  background-image: url("https://images.unsplash.com/photo-1550029402-8ea9bfe19f04?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+}
+.rightPage {
+  height: 100%;
+  width: 50%;
+  background-image: url("https://images.unsplash.com/photo-1592813630413-1124aa567638?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=805&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+}
+.leftContent,
+.rightContent {
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button {
+  border: 2px solid var(--white);
+  padding: 10px 28px;
+  font-size: 20px;
+  font-family: var(Roboto);
+  font-weight: 600;
+  z-index: 1;
+  background-color: transparent;
+  color: var(--white);
+  transition: all 0.5s ease;
+}
+button:hover {
+  background-color: var(--btn-bg-color-on-hover);
+  transition: all 0.5 ease;
+}
+.leftContent,
+.rightContent p {
+  color: var(--white);
+  font-size: 40px;
+  font-family: var(Roboto);
+  font-weight: bolder;
+  z-index: 1;
+}
+
+.hover-left .leftPage::before {
+  content: "";
+  background-color: rgba(42, 83, 160, 0.7);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  /* transition: all 1s linear; */
+}
+.hover-right .rightPage::before {
+  content: "";
+  background-color: rgba(91, 58, 129, 0.7);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.hover-left .leftPage {
+  width: var(--hover-width);
+}
+.hover-left .rightPage {
+  width: var(--hover-none);
+}
+.hover-right .leftPage {
+  width: var(--hover-none);
+}
+.hover-right .rightPage {
+  width: var(--hover-width);
+}
+.leftPage,
+.rightPage,
+.rightPage::before,
+.leftPage::before {
+  transition: all 1s ease-out;
+}
+
+@media (max-width: 800px) {
+  .leftContent,
+  .rightContent p {
+    font-size: 20px;
+    white-space: no-wrap;
+  }
+  button {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+}
